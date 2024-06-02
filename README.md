@@ -98,6 +98,10 @@ $ npm start
 
 ## 🏅 Desafio<a id="desafio"></a> 
 
+* Deve funcionar apenas com letras minúsculas.
+* Não devem ser utilizados letras com acentos nem caracteres especiais;
+* Deve ser possível converter uma palavra para a versão criptografada e também retornar uma palavra criptografada para a versão original.
+
 * Você precisará criar uma API REST, que disponibilize dados através do endpoint http://localhost:8080/series/frases;
 * Será necessário criar as classes Controller, Service, Repository para implementar as requisições e busca ao banco;
 * Será necessário criar a classe Model denominada Frase com os atributos id, titulo, frase, personagem e poster;
