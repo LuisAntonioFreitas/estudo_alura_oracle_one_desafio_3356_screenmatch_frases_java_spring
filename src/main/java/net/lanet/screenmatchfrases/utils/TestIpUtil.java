@@ -10,7 +10,7 @@ import java.util.Objects;
 import static java.lang.Integer.parseInt;
 
 @Component
-public class TestIpUtils {
+public class TestIpUtil {
 
     public static Object[] testIp(String ipAddressOrAndPort) {
         String ipAddress = ipAddressOrAndPort;

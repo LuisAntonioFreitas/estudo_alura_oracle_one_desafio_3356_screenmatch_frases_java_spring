@@ -8,7 +8,7 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 @Component
-public class CurrentDateTimeUtils {
+public class CurrentDateTimeUtil {
 
     public static LocalDateTime getNow() {
         LocalDateTime dateTime = LocalDateTime.now(ZoneId.of("UTC"));

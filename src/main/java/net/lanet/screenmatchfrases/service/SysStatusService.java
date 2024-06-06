@@ -1,8 +1,8 @@
 package net.lanet.screenmatchfrases.service;
 
 import net.lanet.screenmatchfrases.utils.ApplicationProperties;
-import net.lanet.screenmatchfrases.utils.CurrentDateTimeUtils;
-import net.lanet.screenmatchfrases.utils.TestIpUtils;
+import net.lanet.screenmatchfrases.utils.CurrentDateTimeUtil;
+import net.lanet.screenmatchfrases.utils.TestIpUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +40,7 @@ public class SysStatusService implements ISysStatusService {
         } catch(Exception ignored) {};
 
         Map<String, Object> map = new LinkedHashMap<>();
-        map.put("date", CurrentDateTimeUtils.getNow());
+        map.put("date", CurrentDateTimeUtil.getNow());
         map.put("reference", ap.apiSystemReference);
         map.put("system", ap.apiSystemTagBase);
         map.put("version", ap.apiSystemVersion);
@@ -63,10 +63,10 @@ public class SysStatusService implements ISysStatusService {
 
     public ResponseEntity<Object> getConnectIpDb() {
         String host = ap.databaseIp;
-        Object[] result = TestIpUtils.testIp(host);
+        Object[] result = TestIpUtil.testIp(host);
 
         Map<String, Object> map = new LinkedHashMap<>();
-        map.put("date", CurrentDateTimeUtils.getNow());
+        map.put("date", CurrentDateTimeUtil.getNow());
         map.put("db", host);
         map.put("result", result[0]);
         map.put("message", result[1]);
