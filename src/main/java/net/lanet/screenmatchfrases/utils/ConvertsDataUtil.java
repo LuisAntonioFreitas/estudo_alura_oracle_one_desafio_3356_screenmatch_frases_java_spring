@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class ConvertsDataUtil {
@@ -24,7 +25,7 @@ public class ConvertsDataUtil {
         }
     }
 
-    public <T> List<T> getDataListJsonToClass(String json, Class<T> modelTarget) {
+    public <T> List<T> getListJsonToClass(String json, Class<T> modelTarget) {
         CollectionType listModel = objectMapper.getTypeFactory()
                 .constructCollectionType(List.class, modelTarget);
         try {
@@ -46,6 +47,16 @@ public class ConvertsDataUtil {
     public <S, T> T mapDataClassToClass(S modelSource, Class<T> modelTarget) {
         try {
             return modelMapper.map(modelSource, modelTarget);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public <S, T> List<T> mapListClassToClass(List<S> modelSource, Class<T> modelTarget) {
+        try {
+            return modelSource.stream()
+                    .map(e -> modelMapper.map(e, modelTarget))
+                    .collect(Collectors.toList());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

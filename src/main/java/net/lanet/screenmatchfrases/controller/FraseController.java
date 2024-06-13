@@ -1,8 +1,7 @@
 package net.lanet.screenmatchfrases.controller;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
-import net.lanet.screenmatchfrases.dto.FraseDtoResponse;
-import net.lanet.screenmatchfrases.entity.Frase;
+import net.lanet.screenmatchfrases.dto.ResponseDtoFrase;
 import net.lanet.screenmatchfrases.service.IFraseService;
 import net.lanet.screenmatchfrases.utils.ConvertsDataUtil;
 import net.lanet.screenmatchfrases.view.FraseView;
@@ -22,7 +21,7 @@ public class FraseController {
 
     @GetMapping(path = {""})
     public ResponseEntity<Object> getFraseAleatoria() {
-        FraseDtoResponse response = service.getFraseAleatoria();
+        ResponseDtoFrase response = service.getFraseAleatoria();
         FraseView view = convertsDataUtil.mapDataClassToClass(response, FraseView.class);
         return ResponseEntity.status(HttpStatus.OK).body(view);
     }

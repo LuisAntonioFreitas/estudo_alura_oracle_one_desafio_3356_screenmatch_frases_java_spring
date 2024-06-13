@@ -1,7 +1,7 @@
 package net.lanet.screenmatchfrases.service;
 
 import net.lanet.screenmatchfrases.entity.Frase;
-import net.lanet.screenmatchfrases.dto.FraseDtoResponse;
+import net.lanet.screenmatchfrases.dto.ResponseDtoFrase;
 import net.lanet.screenmatchfrases.repository.IFraseRepository;
 import net.lanet.screenmatchfrases.utils.ConvertsDataUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class FraseService implements IFraseService {
 
     @Override
     @Transactional(readOnly = true)
-    public FraseDtoResponse getFraseAleatoria() {
+    public ResponseDtoFrase getFraseAleatoria() {
 
         List<Frase> frases = repository.findAll();
         int randomIndex = 0;
@@ -31,7 +31,7 @@ public class FraseService implements IFraseService {
             randomIndex = random.nextInt(frases.size());
         }
         Frase frase = frases.get(randomIndex);
-        return convertsDataUtil.mapDataClassToClass(frase, FraseDtoResponse.class);
+        return convertsDataUtil.mapDataClassToClass(frase, ResponseDtoFrase.class);
 
 //        Optional<Frase> frase = repository.getFraseAleatoria();
 //        return frase.map(value -> convertsDataUtil.mapDataClassToClass(value, FraseDtoResponse.class))

@@ -1,10 +1,8 @@
 package net.lanet.screenmatchfrases.view;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.lanet.screenmatchfrases.dto.FraseDtoResponse;
-import net.lanet.screenmatchfrases.entity.Frase;
+import net.lanet.screenmatchfrases.dto.ResponseDtoFrase;
 import org.springframework.beans.BeanUtils;
 
 @Data // @Getter @Setter @EqualsAndHashCode @ToString
@@ -15,5 +13,5 @@ public class FraseView {
     private String personagem;
     private String poster;
 
-    public FraseView(FraseDtoResponse model) { BeanUtils.copyProperties(model, this); }
+    public FraseView(ResponseDtoFrase model) { BeanUtils.copyProperties(model, this); }
 }

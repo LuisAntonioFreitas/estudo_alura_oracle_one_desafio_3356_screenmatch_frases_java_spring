@@ -1,20 +1,19 @@
 package net.lanet.screenmatchfrases.dto;
 
 import io.swagger.v3.oas.annotations.Hidden;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Hidden
 @Data // @Getter @Setter @EqualsAndHashCode @ToString
 @NoArgsConstructor //@AllArgsConstructor
-public class FraseDtoResponse {
+public class ResponseDtoFrase {
     private String titulo;
     private String frase;
     private String personagem;
     private String poster;
 
-    public FraseDtoResponse(
+    public ResponseDtoFrase(
             String titulo,
             String frase,
             String personagem,

@@ -6,7 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="tab_frases")
+@Table(name="tab_frases", indexes = {
+        @Index(name = "idx_titulo", columnList = "titulo") })
 @Data // @Getter @Setter @EqualsAndHashCode @ToString
 @NoArgsConstructor @AllArgsConstructor
 public class Frase {

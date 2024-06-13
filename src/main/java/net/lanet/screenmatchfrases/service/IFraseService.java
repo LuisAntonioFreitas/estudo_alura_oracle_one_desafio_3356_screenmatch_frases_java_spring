@@ -1,7 +1,7 @@
 package net.lanet.screenmatchfrases.service;
 
-import net.lanet.screenmatchfrases.dto.FraseDtoResponse;
+import net.lanet.screenmatchfrases.dto.ResponseDtoFrase;
 
 public interface IFraseService {
-    FraseDtoResponse getFraseAleatoria();
+    ResponseDtoFrase getFraseAleatoria();
 }
